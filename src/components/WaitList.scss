@@ -1,0 +1,82 @@
+.waitlist {
+
+	&[open] {
+
+		& > summary > h2 {
+			&::after {
+				mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXgiPjxwYXRoIGQ9Ik0xOCA2IDYgMTgiLz48cGF0aCBkPSJtNiA2IDEyIDEyIi8+PC9zdmc+');
+			}
+		}
+	}
+
+	& > summary {
+		justify-content: right;
+		padding: 0 var(--spacing--40);
+		border-bottom-left-radius: 0.25rem;
+		background-color: var(--color--neutral--005);
+
+		&:hover {
+			color: var(--color--neutral--090);
+			background-color: var(--color--neutral--030);
+		}
+
+		& > h2 {
+			font-size: var(--font-size--md);
+			display: flex;
+			flex-direction: row;
+			gap: var(--spacing--40);
+
+			&::after {
+				content: '';
+				display: block;
+				width: 1rem;
+				aspect-ratio: 1;
+				background-color: currentColor;
+				mask-size: contain;
+				mask-position: center;
+
+				mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWVsbGlwc2lzLXZlcnRpY2FsIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI1IiByPSIxIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxOSIgcj0iMSIvPjwvc3ZnPg==);
+			}
+		}
+
+	}
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+
+	&__ul {
+		padding: 0;
+		list-style: none;
+		margin: 0;
+	}
+
+	&__item {
+		padding: var(--spacing--40);
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: var(--spacing--50);
+		border-bottom: 1px solid var(--color--neutral--020);
+
+		& .wait-list__btn-container {
+			display: flex;
+		}
+
+		@media (max-width: 800px) {
+			padding: var(--spacing--40);
+			gap: var(--spacing--20)
+		}
+
+	}
+
+	&[open] {
+		min-width: 100vw;
+		min-height: 100vh;
+		background-color: var(--color--neutral--010);
+	}
+
+}

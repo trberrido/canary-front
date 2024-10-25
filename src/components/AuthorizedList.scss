@@ -1,0 +1,11 @@
+.authorizedlist__container {
+	flex-grow: 2;
+	border-radius: .25rem;
+	overflow: hidden;
+}
+
+main > h2 {
+	@media (max-width: 800px) {
+		margin-left: var(--spacing--20);
+	}
+}

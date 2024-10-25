@@ -1,0 +1,57 @@
+:root {
+	--color--neutral--000: hsl(10, 0%, 0%);
+	--color--neutral--005: hsl(10, 0%, 5%);
+	--color--neutral--010: hsl(10, 0%, 10%);
+	--color--neutral--015: hsl(10, 0%, 15%);
+	--color--neutral--020: hsl(10, 0%, 20%);
+	--color--neutral--030: hsl(10, 0%, 30%);
+	--color--neutral--040: hsl(10, 0%, 40%);
+	--color--neutral--050: hsl(10, 0%, 50%);
+	--color--neutral--060: hsl(10, 0%, 60%);
+	--color--neutral--070: hsl(10, 0%, 70%);
+	--color--neutral--080: hsl(10, 0%, 80%);
+	--color--neutral--090: hsl(10, 0%, 90%);
+	--color--neutral--100: hsl(10, 0%, 100%);
+
+	--color--alert: hsla(0, 100%, 82.5%, 0.33);
+	--color--alert--light: rgba(255, 0, 72, 1);
+	--color--warning: hsla(0, 100%, 82.5%, 0.33);
+	--color--warning--light: rgba(255, 0, 72, .60);
+
+	--color--info: hsla(0, 100%, 82.5%, 0.33);
+	--color--info--light: rgba(255, 0, 72, .2);
+
+	--color--valid: hsla(0, 100%, 82.5%, 0.33);
+	--color--valid--light: #00733f;
+
+	--color--text: var(--color--neutral--070);
+	--color--background: var(--color--neutral--010);
+
+	--color--primary: #00ace2;
+
+	--border: 1px dotted var(--color--neutral--050);
+	--border-radius: 5rem;
+	--border-light: 1px solid var(--color--neutral--020);
+
+	--spacing--05: .15rem;
+	--spacing--10: .25rem;
+	--spacing--15: .35rem;
+	--spacing--20: .5rem;
+	--spacing--30: .75rem;
+	--spacing--40: 1rem;
+	--spacing--50: 1.25rem;
+	--spacing--60: 1.5rem;
+	--spacing--70: 2em;
+	--spacing--80: 3rem;
+	--spacing--90: 5rem;
+
+	--font-size--sm-xx: .6rem;
+	--font-size--sm-x: .7rem;
+	--font-size--sm: .8rem;
+	--font-size--md: .9rem;
+	--font-size--md-lg: 1rem;
+	--font-size--lg: 1.25rem;
+	--font-size--lg-x: 1.75rem;
+
+	--site--padding: var(--spacing--40);
+}
