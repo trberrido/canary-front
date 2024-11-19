@@ -1,8 +1,8 @@
 import './PriorityTags.scss';
 
 import { SiteDataOK, PluginsList, Version } from "../types/SiteData";
-import { diff as versionDiff } from 'semver';
 import isDataOutdated from '../utils/isOutdated';
+import versionCompare from '../utils/versionCompare';
 
 const Tag = ({level, label}: {level: string; label: string;}) => {
 	return (
@@ -26,8 +26,8 @@ const PriorityTags = ({ siteData, versionsReference}: { siteData: SiteDataOK; ve
 	}
 	return (
 		<div className='priority-tags__container'>
-			<Tag label='PHP' level={versionDiff(siteData.phpVersion, versionsReference.php) ?? 'valid'} />
-			<Tag label='WP' level={versionDiff(siteData.wpVersion, versionsReference.wp) ?? 'valid'} />
+			<Tag label='PHP' level={versionCompare(siteData.phpVersion, versionsReference.php) ?? 'valid'} />
+			<Tag label='WP' level={versionCompare(siteData.wpVersion, versionsReference.wp) ?? 'valid'} />
 			<Tag label='Plugins' level={areUpdatesAvailable(objectToArray(siteData.plugins)) ? 'major' : ''} />
 			{
 				isDataOutdated(siteData.date) ?

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { diff as versionDiff } from 'semver';
 import isDataOutdated from "../utils/isOutdated";
+import versionCompare from "../utils/versionCompare";
 
 import { SiteData, PluginsList, Version } from "../types/SiteData";
 
@@ -108,13 +108,13 @@ const SiteTable = ({ siteID, versionsReference, mv }: { siteID: string; versions
                     <th colSpan={2}>IP</th>
                     <td colSpan={2}>{siteData.IP}</td>
                   </tr>
-                  <tr className={'site-table__row site-table__row--' + versionDiff(siteData.phpVersion, versionsReference.php)}>
+                  <tr className={'site-table__row site-table__row--' + versionCompare(siteData.phpVersion, versionsReference.php)}>
                     <th colSpan={2}>PHP Version</th>
-                    <td colSpan={2}>{siteData.phpVersion} {versionDiff(siteData.phpVersion, versionsReference.php) === null ? '' : `(latest: ${versionsReference.php})`}</td>
+                    <td colSpan={2}>{siteData.phpVersion} {versionCompare(siteData.phpVersion, versionsReference.php) === '' ? '' : `(latest: ${versionsReference.php})`}</td>
                   </tr>
-                  <tr className={'site-table__row site-table__row--' + versionDiff(siteData.wpVersion, versionsReference.wp)}>
+                  <tr className={'site-table__row site-table__row--' + versionCompare(siteData.wpVersion, versionsReference.wp)}>
                     <th colSpan={2}>WP Version</th>
-                    <td colSpan={2}>{siteData.wpVersion}  {versionDiff(siteData.wpVersion, versionsReference.wp) === null ? '' : `(latest: ${versionsReference.wp})`}</td>
+                    <td colSpan={2}>{siteData.wpVersion}  {versionCompare(siteData.wpVersion, versionsReference.wp) === '' ? '' : `(latest: ${versionsReference.wp})`}</td>
                   </tr>
                   <tr>
                     <th colSpan={2}>admin</th>
@@ -136,7 +136,7 @@ const SiteTable = ({ siteID, versionsReference, mv }: { siteID: string; versions
                           </th>
                         )}
                          <th className={'site-table__row th' + (plugin.updateAvailable ? ' site-table__row--major' : '') }>{plugin.name}</th>
-                         <td className={'site-table__row td' + (plugin.updateAvailable ? ' site-table__row--major' : '') }>{plugin.version} {plugin.updateAvailable ? '( ' + plugin.newVersion + ' )' : ''}</td>
+                         <td className={'site-table__row td' + (plugin.updateAvailable ? ' site-table__row--major' : '') }>{plugin.version} {plugin.updateAvailable ? '(latest: ' + plugin.newVersion + ')' : ''}</td>
                       </tr>
                     )
                   )}
